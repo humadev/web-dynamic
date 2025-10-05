@@ -1,0 +1,310 @@
+/* CSS Reset & Basic Styling */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f7f9;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --light-gray: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* Membuat layout flex column agar footer bisa menempel di bawah */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* == HEADER STYLE == */
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* == MAIN CONTENT STYLE == */
+main {
+    flex: 1; /* Membuat konten utama mengisi ruang yang tersedia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Container Utama Profil */
+.profile-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+/* Kolom Kiri (Sidebar) */
+.profile-sidebar {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.profile-sidebar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-sidebar h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.profile-sidebar h2 {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--light-gray);
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    list-style: none;
+    text-align: left;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    width: 20px;
+    margin-right: 15px;
+    color: var(--primary-color);
+}
+
+.social-media {
+    margin-top: 40px;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+/* Kolom Kanan (Konten Utama) */
+.profile-main {
+    flex: 2;
+    padding: 40px;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h3 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-section p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.skills-list, .hobbies-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li, .hobbies-list li {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.education-item {
+    margin-bottom: 15px;
+}
+
+.education-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.education-item p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* == FOOTER STYLE == */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Desain Responsif untuk Mobile */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+    main {
+            padding: 20px 10px;
+    }
+    .profile-container {
+        flex-direction: column;
+    }
+    .profile-sidebar, .profile-main {
+        min-width: 100%;
+    }
+}
+
+.main-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.list-header h1 { color: #2c3e50; }
+
+.btn-dashboard {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.btn-dashboard:hover { background-color: #2980b9; }
+
+.mahasiswa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+    gap: 25px;
+}
+
+.mahasiswa-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mahasiswa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-photo-container {
+    width: 250px;
+    height: 200px;
+}
+
+.card-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+.card-info h3 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+}
+.card-info p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* === Styling untuk Halaman Profil Dinamis === */
+.profile-page-body {
+    height: 100vh;
+}
+
+/* Menggunakan kembali style dari contoh profil sebelumnya */
+.profile-container { margin: auto; }
+.profile-sidebar a { color: white; text-decoration: none; }
+.profile-sidebar a:hover { text-decoration: underline; }
+
+.tags-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.tags-list li {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+.back-link:hover { text-decoration: underline; }
