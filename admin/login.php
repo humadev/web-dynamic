@@ -10,8 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($email) || empty($password)) {
         $error = 'Email dan password wajib diisi.';
     } else {
-        $stmt = $pdo->prepare('SELECT * FROM mahasiswa WHERE email = ? and password = ?');
-        $stmt->execute([$email, $password]);
+        $query = "SELECT * FROM mahasiswa WHERE email = '$email' and password = '$password'";
+        echo $query;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
         $user = $stmt->fetch();
 
         if ($user) {

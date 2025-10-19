@@ -15,9 +15,9 @@ if (!$row) {
 
 // Proses update data jika form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $telepon = mysqli_real_escape_string($conn, $_POST['telepon']);
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $telepon = $_POST['telepon'];
 
     // Query untuk update data
     $sql_update = "UPDATE mahasiswa SET 
@@ -63,15 +63,15 @@ mysqli_close($conn);
                     <!-- Kolom Kiri -->
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo htmlspecialchars($row['nama']); ?>" required>
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $row['nama']; ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($row['email']); ?>" required>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="telepon" class="form-label">Telepon</label>
-                            <input type="text" class="form-control" id="telepon" name="telepon" value="<?php echo htmlspecialchars($row['telepon']); ?>">
+                            <input type="text" class="form-control" id="telepon" name="telepon" value="<?php echo $row['telepon']; ?>">
                         </div>
                 </div>
                 <hr>

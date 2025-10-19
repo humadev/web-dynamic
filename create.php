@@ -9,10 +9,10 @@ $message = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Mengambil data dari form dan melindunginya dari SQL injection
-    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
     // Menggunakan password_hash untuk keamanan kata sandi
-    $telepon = mysqli_real_escape_string($conn, $_POST['telepon']);
+    $telepon = $_POST['telepon'];
 
     // --- Proses Upload Foto ---
     $photo = ''; // Inisialisasi nama file foto

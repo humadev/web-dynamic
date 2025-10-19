@@ -80,9 +80,9 @@
                                     echo "<img src='https://placehold.co/50x50/ced4da/6c757d?text=N/A' alt='Foto tidak tersedia' class='profile-photo'>";
                                 }
                                 echo "</td>";
-                                echo "<td>" . htmlspecialchars($row["nama"]) . "</td>";
-                                echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-                                echo "<td>" . htmlspecialchars($row["telepon"]) . "</td>";
+                                echo "<td>" . $row["nama"] . "</td>";
+                                echo "<td>" . $row["email"] . "</td>";
+                                echo "<td>" . $row["telepon"] . "</td>";
                                 echo "<td class='action-buttons'>";
                                 echo "<a href='update.php?id=" . $row["id"] . "' class='btn btn-warning btn-sm'>Edit</a>";
                                 // Tambahkan konfirmasi javascript sebelum menghapus
